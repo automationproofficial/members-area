@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Automation Pro Login</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Enter Access Password</h1>
+    <form id="authForm">
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Unlock</button>
+      <p id="error" class="error">Incorrect password. Please try again.</p>
+    </form>
+  </div>
+  <script>
+    document.getElementById("authForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const enteredPassword = document.getElementById("password").value;
+      const correctPassword = "autoposter2025";
+      if (enteredPassword === correctPassword) {
+        window.location.href = "landing.html";
+      } else {
+        document.getElementById("error").style.display = "block";
+      }
+    });
+  </script>
+</body>
+</html>
